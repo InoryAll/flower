@@ -5,7 +5,7 @@
 
 // mongodb配置
 var dbConfig = {
-  address: 'mongodb://sgcy:123456@localhost:27017/sgcy',
+  address: 'mongodb://trj:123456@localhost:27017/flower',
 };
 
 module.exports = dbConfig;
