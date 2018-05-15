@@ -1,23 +1,39 @@
 /**
- * mysql的数据库工具类
- * Created by tianrenjie on 2018/3/14
+ * 数据库操作类
  */
-//mysql操作类
-var mysql = require('mysql');
-var dbConfig  = require('../config');
-var DBUtil = {
-  connection: undefined,
-  connect: function () {
-    var connection = mysql.createConnection(dbConfig);
-    connection.connect(function(err) {
-      if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-      }
-      this.connection = connection;
-      console.log('connected to ' + dbConfig.host + ':' + dbConfig.port);
-      console.log('connected as id ' + connection.threadId);
+// mongodb数据库操作封装
+var mongoose = require('mongoose');
+var config = require('../config');
+mongoose.Promise = global.Promise;
+
+class DBUtil{
+  // 连接到数据库
+  static connectToDB() {
+    mongoose.connect(config.address);
+    this.connection = mongoose.connection;
+    this.connection.on('open', () => {
+      console.log('connected to:'+config.address);
     });
-  },
-};
+    this.connection.on('error', (err) => {
+      if (err) {
+        console.log('connected to %s error', config.address);
+        process.exit(1);
+      }
+    });
+  }
+  // 断开与数据库的连接
+  static disconnectToDB() {
+    mongoose.disconnect();
+    this.connection.on('disconnected', () => {
+      console.log('db disconnected to:'+config.address);
+    });
+    this.connection.on('error', (err) => {
+      if (err) {
+        console.log('disconnected to %s error', config.address);
+        process.exit(1);
+      }
+    });
+  }
+}
+
 module.exports = DBUtil;
