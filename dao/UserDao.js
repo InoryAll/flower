@@ -26,6 +26,8 @@ class UserDao{
         tel: undefined,
         email: undefined,
         permission: 1,
+        qq: undefined,
+        place: undefined,
         deleteFlag: 0,
       };
       delete obj.passwordRepeat;

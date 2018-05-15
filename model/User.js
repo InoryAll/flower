@@ -11,6 +11,8 @@ var UserSchema = new Schema({
   tel: String,
   email: String,
   permission: Number,
+  qq: String,
+  place: String,
   deleteFlag: Number,
 });
 
