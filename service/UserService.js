@@ -6,7 +6,7 @@ var Response = require('../util/Response');
 
 class UserService{
   static validDateUser(req, res, next) {
-    var condition = { username: req.query.username };
+    var condition = req.query;
     UserDao.findUserByCondition(condition)
     .then((data) => {
       res.status(200).json(Response.ok(data));

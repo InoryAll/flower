@@ -20,24 +20,23 @@ class ItemDao{
       const initItem = {
         name: undefined,// 名称
         url: undefined,// 图片地址
-        adminId: undefined,// 商家id
-        adminName: undefined,// 商家姓名
         prePrice: undefined,// 原价
         nowPrice: undefined,// 现价
-        type: undefined,// 类型
-        ingredients: undefined,// 配料
-        origin: undefined,// 产地
-        specification: undefined,// 规格
-        expiration: undefined,// 保质期
-        standard: undefined,// 产品标准号
-        license: undefined,// 生产许可证编号
-        count: undefined, // 销量
-        amount: undefined,// 库存
-        taste: undefined,// 口味
-        store: undefined,// 储存方法
-        eat: undefined,// 食用方法
-        detail: undefined,// 商家细节
-        deleteFlag: 0,// 删除标志
+        usage: undefined,// 用途
+        material: undefined,// 材料
+        price: undefined,// 价值
+        object: undefined,// 对象
+        holiday: undefined,// 节日
+        branch: undefined,// 枝数
+        kind: undefined,// 类型
+        color: undefined,// 颜色
+        pack: undefined,// 包装
+        meaning: undefined,// 花语
+        attach: undefined,// 附送
+        send: undefined,// 配送
+        detail: undefined,// 说明
+        position: undefined,// 特殊位置
+        deleteFlag: undefined,// 删除标志
       };
       var item = new Item({
         ...initItem,
