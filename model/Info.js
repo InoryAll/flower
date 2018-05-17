@@ -7,6 +7,7 @@ var InfoSchema = new Schema({
   author: String,
   content: String,
   timestamp: String,
+  type: String,
   deleteFlag: Number,
 });
 

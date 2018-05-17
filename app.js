@@ -16,7 +16,7 @@ var cart = require('./routes/cart');
 var question = require('./routes/question');
 var comment = require('./routes/comment');
 var info = require('./routes/info');
-var address = require('./routes/address');
+var recommend = require('./routes/recommend');
 var action = require('./routes/action');
 
 var app = express();
@@ -56,7 +56,7 @@ app.use('/cart', cart);
 app.use('/question', question);
 app.use('/comment', comment);
 app.use('/info', info);
-app.use('/address', address);
+app.use('/recommend', recommend);
 app.use('/action', action);
 DBUtil.connectToDB();
 

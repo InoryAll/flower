@@ -3,20 +3,19 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var OrderSchema = new Schema({
-  itemId: String,
-  itemName: String,
-  itemPrice: String,
-  url: String,
-  count: String,
-  itemTotalPrice: String,
+  receiveName: String,
+  receivePhone: String,
+  address: String,
+  sendName: String,
+  sendPhone: String,
+  payWay: String,
+  date: String,
+  totalPrice: String,
+  timestamp: String,
+  itemList: Array,
   userId: String,
   userName: String,
-  adminId: String,
-  adminName: String,
-  note: String,
-  status: String,
-  address: String,
-  timestamp: String,
+  status: Number,
   deleteFlag: Number,
 });
 

@@ -29,20 +29,19 @@ class OrderDao{
   static addOrder(obj) {
     return new Promise((resolve, reject) => {
       var initOrder = {
-        itemId: undefined,
-        itemName: undefined,
-        itemPrice: undefined,
-        count: undefined,
-        url: undefined,
-        itemTotalPrice: undefined,
+        receiveName: undefined,
+        receivePhone: undefined,
+        address: undefined,
+        sendName: undefined,
+        sendPhone: undefined,
+        payWay: undefined,
+        date: undefined,
+        totalPrice: undefined,
+        timestamp: undefined,
+        itemList: undefined,
         userId: undefined,
         userName: undefined,
-        adminId: undefined,
-        adminName: undefined,
-        note: undefined,
-        status: undefined,
-        address: undefined,
-        timestamp: undefined,
+        status: 0,
         deleteFlag: 0,
       };
       var order = new Order({

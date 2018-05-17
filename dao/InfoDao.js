@@ -21,6 +21,7 @@ class InfoDao{
         name: undefined,
         author: undefined,
         content: undefined,
+        type: undefined,
         timestamp: undefined,
         deleteFlag: 0,
       };
