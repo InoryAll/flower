@@ -36,7 +36,7 @@ class RecommendDao{
         send: undefined,// 配送
         detail: undefined,// 说明
         position: undefined,// 特殊位置
-        deleteFlag: undefined,// 删除标志
+        deleteFlag: 0,// 删除标志
       };
       var recommend = new Recommend({
         ...initRecommend,

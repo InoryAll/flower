@@ -17,7 +17,7 @@ class AdminDao{
   }
   static updateAdminByCondition(condition, obj) {
     return new Promise((resolve, reject) => {
-      Admin.udpate(condition, obj, (err) => {
+      Admin.update(condition, obj, (err) => {
         if (err) {
           reject(err);
         } else {
@@ -31,6 +31,7 @@ class AdminDao{
       const initAdmin = {
         username: undefined,
         password: undefined,
+        email: undefined,
         permission: 1,
         deleteFlag: 0,
       };

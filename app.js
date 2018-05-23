@@ -18,6 +18,7 @@ var comment = require('./routes/comment');
 var info = require('./routes/info');
 var recommend = require('./routes/recommend');
 var action = require('./routes/action');
+var file = require('./routes/file');
 
 var app = express();
 
@@ -28,8 +29,8 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '10mb'})); // for parsing application/json
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
@@ -58,6 +59,7 @@ app.use('/comment', comment);
 app.use('/info', info);
 app.use('/recommend', recommend);
 app.use('/action', action);
+app.use('/file', file);
 DBUtil.connectToDB();
 
 // catch 404 and forward to error handler
