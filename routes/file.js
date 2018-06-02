@@ -14,8 +14,7 @@ router.post('/upload',function (req, res, next){
   form.uploadDir = path.join(__dirname, '../public/static');
 
   form.parse(req, function (err, fields, files){
-    res.writeHead(200, {'content-type': 'text/plain'});
-    res.end(util.inspect({fields: fields, files: files}));
+    res.status(200).json({ fields: fields, files: files });
   })
 });
 
